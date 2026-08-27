@@ -1,0 +1,18 @@
+# never commit firmware or device identifiers
+*.bin
+*.img
+*.elf
+*.mbn
+*.dtb
+verify_*
+dumps/
+out/
+dtbs/
+# prevent accidental firmware/module/log commits
+*.mdt
+*.ko
+*.log
+*.dtbo
+*.b[0-9][0-9]
+*.bin.*
+*.img.*
