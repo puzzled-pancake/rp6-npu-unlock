@@ -139,6 +139,16 @@ adb shell dmesg | grep -E 'hexagon-npu|cdsp\.mdt'
 
 `tools/flash_unlock.sh` wraps the flash + readback-verify + reset steps.
 
+## So the DSP is up - now what?
+
+[docs/TESTING_THE_NPU.md](docs/TESTING_THE_NPU.md) is a field report on
+running LLM inference on the unlocked Hexagon: the GenieX hybrid runtime
+and the one-file fix that makes it work, measured throughput for 0.8B-9B
+models on NPU-hybrid, CPU and GPU, the ~4 GB per-session mapping ceiling
+and its `-ngl` workaround, the load-guard rule that prevents kernel panics,
+and a gotchas checklist. Short version: the NPU is a prefill/context
+accelerator, decode stays a CPU job, and the GPU is out.
+
 ## Troubleshooting (symptom and likely cause)
 
 | Symptom | Likely cause | Fix / see |
@@ -169,6 +179,7 @@ If you also applied the optional module patches, reflash stock
 | `tools/extract_dtb_pool.py` | extracts the base DTBs from your vendor_boot |
 | `tools/flash_unlock.sh` | EDL flash + readback verify + reset wrapper |
 | `docs/RESEARCH_NOTES.md` | full reverse-engineering writeup: the flipper hunt, ABL/ufdt source analysis, the boot-loop post-mortems, module patch details |
+| `docs/TESTING_THE_NPU.md` | post-unlock field report: LLM runtimes on the HTP, backend speed results, memory ceiling, gotchas |
 
 ## Credits
 
