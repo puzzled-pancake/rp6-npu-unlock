@@ -1,5 +1,8 @@
 # Retroid Pocket 6 CDSP/NPU Unlock
 
+> ⚒️ **Support this research:** [GitHub Sponsors](https://github.com/sponsors/puzzled-pancake) · [Ko-fi](https://ko-fi.com/ratherpuzzled)
+
+
 Enables the vendor-disabled CDSP (Hexagon compute DSP, the "NPU" used by
 QNN/HTP and LiteRT) on the **Retroid Pocket 6** (Qualcomm QCM8550 / kailau),
 on stock firmware, **without root**.
